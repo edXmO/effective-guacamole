@@ -33,7 +33,6 @@ app.use(
     })
 );
 
-
 // Passport authentication cookie
 app.use(passport.initialize());
 app.use(passport.session());

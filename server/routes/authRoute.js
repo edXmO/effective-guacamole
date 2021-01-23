@@ -9,16 +9,20 @@ module.exports = app => {
             scope: ['profile', 'email']
         })
     )
-
     // Callback handler, de vuelta de google a nuestro servidor
     // Falta añadir como tercer argumento, la respuesta del calback 
     // redirigiendo a pagina principal tras el logueado de usuario
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get('/auth/google/callback',
+        passport.authenticate('google'),
+        (req, res) => {
+            res.status(301).redirect('http://localhost:3000');
+        }
+    );
 
     // Logout route handler
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.redirect('http://localhost:5000/api/current_user');
+        res.redirect('http://localhost:3000');
     });
 
     // Test
