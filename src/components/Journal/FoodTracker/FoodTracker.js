@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 // En cada segment, breakfast etc, va a haber un formulario para introducir los alimentos del día
+// Components
+import AddItems from './AddItems/AddItems';
+import ItemList from './ItemList/ItemList';
 
 class FoodTracker extends Component {
     render() {
@@ -8,32 +11,24 @@ class FoodTracker extends Component {
             <div className='ui container'>
                 <div className="ui segments">
                     <div className="ui segment">
-                        <h3>Food Tracking</h3>
+                        <h3>Daily Register</h3>
                     </div>
                     <div className="ui segments">
                         <div className="ui teal segment">
-                            <h4>Breakfast</h4>
-                            <div class="ui teal pointing label">
-                                Add Item
-                            </div>
+                            <AddItems meal='Breakfast' />
+                            <ItemList />
                         </div>
                         <div className="ui teal segment">
-                            <h4>Lunch</h4>
-                            <div class="ui teal pointing label">
-                                Add Item
-                            </div>
+                            <AddItems meal='Lunch' />
+                            <ItemList />
                         </div>
                         <div className="ui teal segment">
-                            <h4>Dinner</h4>
-                            <div class="ui teal pointing label">
-                                Add Item
-                            </div>
+                            <AddItems meal='Dinner' />
+                            <ItemList />
                         </div>
                         <div className="ui teal segment">
-                            <h4>Snacks</h4>
-                            <div class="ui teal pointing label">
-                                Add Item
-                            </div>
+                            <AddItems meal='Snacks' />
+                            <ItemList />
                         </div>
                     </div>
                 </div>
