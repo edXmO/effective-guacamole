@@ -9,9 +9,17 @@ module.exports = app => {
         })
     );
     app.use(
-        '/auth/logout',
+        '/api/logout',
         createProxyMiddleware({
-            target: 'http://localhost:5000'
+            target: 'http://localhost:5000',
+            changeOrigin: true
+        })
+    );
+    app.use(
+        '/api/current_user',
+        createProxyMiddleware({
+            target: 'http://localhost:5000',
+            changeOrigin: true
         })
     );
 };

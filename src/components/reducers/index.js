@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-
+import authReducer from './authReducer';
+import ingrReducer from './ingrReducer';
 
 
 // Actions
 export default combineReducers({
-    mockReducer: () => 'hello'
+    auth: authReducer,
+    ingredients: ingrReducer
 });

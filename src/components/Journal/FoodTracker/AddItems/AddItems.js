@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 // import Foodform from '../../../Foodform/Foodform';
 import Searchbar from '../../../Searchbar/Searchbar';
 
+
 class AddItems extends Component {
 
     state = {
         deployed: true
     }
 
-
     render() {
         return (
-            <div className='ui dropdown'>
+            <div>
                 <div
                     onClick={() => this.setState({ deployed: !this.state.deployed })}
                     className="ui teal button">
@@ -20,12 +20,10 @@ class AddItems extends Component {
                 </div>
                 {!this.state.deployed ?
                     <div className='ui segment'>
-                        <form>
-                            <Searchbar />
-                            <label>Proteins</label>
-                        </form>
+                        <Searchbar />
                     </div>
-                    : null}
+                    : null
+                }
             </div>
         )
     }

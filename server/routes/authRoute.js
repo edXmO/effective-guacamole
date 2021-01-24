@@ -15,19 +15,19 @@ module.exports = app => {
     app.get('/auth/google/callback',
         passport.authenticate('google'),
         (req, res) => {
-            res.status(301).redirect('http://localhost:3000');
+            res.redirect('http://localhost:3000');
         }
     );
 
     // Logout route handler
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.redirect('http://localhost:3000');
+        res.redirect('http://localhost:3000/');
     });
 
     // Test
     // Current user logged in 
     app.get('/api/current_user', (req, res) => {
-        res.send(req.user);
+        res.send(req.user).redirect('http://localhost:3000');
     });
 }

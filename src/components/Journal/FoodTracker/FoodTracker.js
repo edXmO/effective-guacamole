@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // En cada segment, breakfast etc, va a haber un formulario para introducir los alimentos del día
 // Components
 import AddItems from './AddItems/AddItems';
-import ItemList from './ItemList/ItemList';
+
 
 class FoodTracker extends Component {
     render() {
@@ -16,19 +16,15 @@ class FoodTracker extends Component {
                     <div className="ui segments">
                         <div className="ui teal segment">
                             <AddItems meal='Breakfast' />
-                            <ItemList />
                         </div>
                         <div className="ui teal segment">
-                            <AddItems meal='Lunch' />
-                            <ItemList />
+                            {/* <AddItems meal='Lunch' /> */}
                         </div>
                         <div className="ui teal segment">
-                            <AddItems meal='Dinner' />
-                            <ItemList />
+                            {/* <AddItems meal='Dinner' /> */}
                         </div>
                         <div className="ui teal segment">
-                            <AddItems meal='Snacks' />
-                            <ItemList />
+                            {/* <AddItems meal='Snacks' /> */}
                         </div>
                     </div>
                 </div>
